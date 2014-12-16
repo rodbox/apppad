@@ -1,0 +1,37 @@
+.apppad {
+  padding: 0px;
+  margin: 0px;
+  display: inline-block;
+  border-radius: 8px;
+  overflow: hidden ;
+}
+.apppad a.bt-apppad:nth-child(4),
+.apppad a.bt-apppad:nth-child(7) {
+  clear: both;
+}
+.apppad a.bt-apppad {
+  font-size: 0.8em;
+  height: 102px;
+  padding: 2px;
+  width: 102px;
+  background-color: rgba(0, 0, 0, 0.1);
+  float: left;
+  margin-right: 1px;
+  margin-bottom: 1px;
+  -webkit-transition: all 95ms linear;
+  -moz-transition: all 95ms linear;
+  -ms-transition: all 95ms linear;
+  -o-transition: all 95ms linear;
+  transition: all 95ms linear;
+}
+.apppad a:hover {
+  background-color: rgba(0, 0, 0, 0.35);
+}
+.apppad a.onKeyPress {
+  -moz-transform: scale(0.9);
+  -webkit-transform: scale(0.9);
+  -o-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  transform: scale(0.9);
+  background-color: rgba(0, 0, 0, 0.05);
+}
