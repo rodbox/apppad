@@ -35,13 +35,14 @@ $.apppad = function(paramSend){
 		var k = e.keyCode;
 		var id = k-96;
 		if (k >= 97 && k <=105) {
+			var btAction = $("#apppad-action-"+id);
 			if(e.type=="keydown"){
 				param['action'+id]();
-				$("#apppad-action-"+id).addClass("onPadPress");
+				btAction.addClass("onPadPress");
 				return false;
 			}
 			else{
-				$("#apppad-action-"+id).removeClass("onPadPress");
+				btAction.removeClass("onPadPress");
 				return false;
 			}
 		}
@@ -49,6 +50,25 @@ $.apppad = function(paramSend){
 	return false;
         })
 
+
+if($.appMobile()){
+	$(document).on("tap",".apppad .bt-apppad",function (e){
+		var t = $(this);
+		var id = t.data("id");
+
+				param['action'+id]();
+				t.addClass("onPadPress");
+				$('.apppad').addClass("onPadPress");
+				setTimeout(function (){
+					t.removeClass("onPadPress");
+					$('.apppad').removeClass("onPadPress");
+				},125)
+				return false;
+
+			
+	})
+}
+else{
 	$(document).on("mousedown mouseup mouseleave ",".apppad .bt-apppad",function (e){
 		var t = $(this);
 		var id = t.data("id");
@@ -64,6 +84,11 @@ $.apppad = function(paramSend){
 				return false;
 			}
 	})
+}
+
+
+
+	
 
 }
 
