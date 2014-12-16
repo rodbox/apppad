@@ -27,7 +27,7 @@
 .apppad a:hover {
   background-color: rgba(0, 0, 0, 0.35);
 }
-.apppad a.onKeyPress {
+.apppad a.onPadPress {
   -moz-transform: scale(0.9);
   -webkit-transform: scale(0.9);
   -o-transform: scale(0.9);

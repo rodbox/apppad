@@ -37,11 +37,11 @@ $.apppad = function(paramSend){
 		if (k >= 97 && k <=105) {
 			if(e.type=="keydown"){
 				param['action'+id]();
-				$("#apppad-action-"+id).addClass("onKeyPress");
+				$("#apppad-action-"+id).addClass("onPadPress");
 				return false;
 			}
 			else{
-				$("#apppad-action-"+id).removeClass("onKeyPress");
+				$("#apppad-action-"+id).removeClass("onPadPress");
 				return false;
 			}
 		}
@@ -49,16 +49,18 @@ $.apppad = function(paramSend){
 	return false;
         })
 
-	$(document).on("mousedown mouseup mouseleave",".apppad .bt-apppad",function (e){
+	$(document).on("mousedown mouseup mouseleave ",".apppad .bt-apppad",function (e){
 		var t = $(this);
 		var id = t.data("id");
 		if(e.type=="mousedown"){
 				param['action'+id]();
-				t.addClass("onKeyPress");
+				t.addClass("onPadPress");
+				$('.apppad').addClass("onPadPress");
 				return false;
 			}
 			else{
-				t.removeClass("onKeyPress");
+				t.removeClass("onPadPress");
+				$('.apppad').removeClass("onPadPress");
 				return false;
 			}
 	})
@@ -68,15 +70,33 @@ $.apppad = function(paramSend){
 
 
 var param = {
-	action1 : function (){
-		console.log("mon action 11111111");
-	},
-	action2 : function (){
-		console.log("mon action 2");
-	},
-	action3 : function (){
-		console.log("Voila l'action 3");
-	}
+    action1 : function (){
+        $("#result").html("J'effectue l'action 1");
+    },
+    action2 : function (){
+        $("#result").html("mon action 2");
+    },
+    action3 : function (){
+        $("#result").html("Voila l'action 3");
+    },
+    action4 : function (){
+        $("#result").html("et la 4");
+    },
+    action5 : function (){
+        $("#result").html("une cinquieme c'est bien aussi");
+    },
+    action6 : function (){
+        $("#result").html("la 6 est comme ca !");
+    },
+    action7 : function (){
+        $("#result").html("7 voila qui est fait");
+    },
+    action8 : function (){
+        $("#result").html("a 8 on continue");
+    },
+    action9 : function (){
+        $("#result").html("9 Actions c'est déja pas mal");
+    }
 }
 
 $.apppad(param);
