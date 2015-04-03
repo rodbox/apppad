@@ -46,26 +46,23 @@ $.apppad = function(paramSend){
 				return false;
 			}
 		}
-		
 	return false;
         })
-
 
 if($.appMobile()){
 	$(document).on("tap",".apppad .bt-apppad",function (e){
 		var t = $(this);
 		var id = t.data("id");
 
-				param['action'+id]();
-				t.addClass("onPadPress");
-				$('.apppad').addClass("onPadPress");
-				setTimeout(function (){
-					t.removeClass("onPadPress");
-					$('.apppad').removeClass("onPadPress");
-				},125)
-				return false;
-
-			
+		param['action'+id]();
+		t.addClass("onPadPress");
+		$('.apppad').addClass("onPadPress");
+		setTimeout(function (){
+			t.removeClass("onPadPress");
+			$('.apppad').removeClass("onPadPress");
+		},125)
+		
+		return false;
 	})
 }
 else{
@@ -86,13 +83,7 @@ else{
 	})
 }
 
-
-
-	
-
 }
-
-
 
 var param = {
     action1 : function (){
